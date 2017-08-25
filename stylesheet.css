@@ -1,0 +1,56 @@
+body {
+	background-color: #fafafa;
+	padding: 0;
+	margin: 0}
+
+header, #employees {
+	margin: 50px 75px auto 75px;}
+
+header h4 {
+	text-transform: uppercase;
+	color: #303030;
+	font-family: "Trebuchet MS";
+	font-weight: 300;
+	font-size: .9em;
+	letter-spacing: .15em}
+
+#employees {
+	margin-top: 25px;}
+
+.employee {
+	background-color: white;
+  width: 29%;
+	height: 125px;
+	border: .093em solid #D0D0D0;
+	border-radius: 5px;
+	text-align: center;
+	margin: -5px 40px 40px auto;
+	display: -webkit-flex;
+  display: inline-flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+	-webkit-align-items: center;
+	align-content: center;}
+	.employee-info {
+		text-align: left; }
+		.employee-info h3 {
+			font-family: "PT Sans";
+			font-size: 1em;
+			font-weight: 600;
+			letter-spacing: 1px;
+			line-height: 3px;
+			color: #505050;
+			margin-left: -30px;
+			margin-bottom: 1.2em}
+			.employee-info p {
+				font-size: .8em;
+				letter-spacing: normal;
+				font-weight: 100;
+				color: #D0D0D0;
+				line-height: 4px;}
+	.employee img {
+		border-radius: 50%;
+		height: 100px;
+		width: 100px}
+	.employee > div {
+  	margin: auto auto auto 5%;}
