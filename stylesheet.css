@@ -4,7 +4,7 @@ body {
 	margin: 0}
 
 header, #employees {
-	margin: 50px 75px auto 75px;}
+	margin: 50px 75px auto 100px;}
 
 header h4 {
 	text-transform: uppercase;
@@ -14,46 +14,40 @@ header h4 {
 	font-size: .9em;
 	letter-spacing: .15em}
 
-#employees {
-	margin-top: 25px;}
-
+	#employees {
+	  margin: 0 80px;
+	  display: flex;
+		flex-wrap: wrap;
+	  justify-content: space-around;}
 .employee {
+  display: flex;
+  align-items: center;
 	background-color: white;
-  width: 331px;
+	margin-bottom: 30px;
+  width: 30%;
 	height: 125px;
 	border: .093em solid #D0D0D0;
-	border-radius: 5px;
-	text-align: center;
-	margin: -5px 40px 40px auto;
-	display: -webkit-flex;
-  display: inline-flex;
-  -webkit-justify-content: center;
-  justify-content: center;
-	-webkit-align-items: center;
-	align-content: center;}
-	.employee > div {
-  	margin: auto auto auto 5%;}
+	border-radius: 5px;}
 	.employee img {
+    margin: auto 15px;
 		border-radius: 50%;
 		height: 100px;
-		width: 100px}
-	.employee-info {
-		text-align: left; }
+		width: 100px;}
 		.employee-info h3 {
 			font-family: "PT Sans";
 			font-size: 1em;
 			font-weight: 600;
 			letter-spacing: 1px;
 			line-height: 3px;
-			color: #505050;
-			margin-left: -30px;
-			margin-bottom: 1.2em}
+			color: #505050;}
 			.employee-info p {
+				font-family: "PT Sans";
 				font-size: .8em;
 				letter-spacing: normal;
 				font-weight: 100;
 				color: #D0D0D0;
 				line-height: 4px;}
+
 .capitalize {
 	text-transform: capitalize;
 }

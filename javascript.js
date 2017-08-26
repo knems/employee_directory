@@ -1,40 +1,42 @@
+"use strict"
+
 $(document).ready(function(){
-	let $employees = $('#employees');
+	(function(){
+		let $employees = $('#employees');
+		let friends;
 
-	// <div class="employee">
-	// 	<div>
-	// 		<img src="https://randomuser.me/api/portraits/men/83.jpg">
-	// 	</div>
-	// 	<div class="employee-info">
-	// 		<h3>Haleigh Macciarella<h3>
-	// 		<p>dtucker@yakitri.edu</p>
-	// 		<p>Chicago</p>
-	// 	</div>
-	// </div>
+		let employeeTemplate = "" +
+		"<div class=\"employee\">" +
+		"<div>" +
+		"<img src={{ picture.large }}>" +
+		"</div>" +
+		"<div class=\"employee-info\">" +
+		"<h3 class=\"capitalize\">{{ name.first }} {{ name.last }}</h3>" +
+		"<p>{{ email }}</p>" +
+		"<p class=\"capitalize\">{{ location.city }}</p>" +
+		"</div>" +
+	  "</div>";
 
-	let employeeTemplate = "" +
-	"<div class=\"employee\">" +
-	"<div>" +
-	"<img src={{ picture.large }}>" +
-	"</div>" +
-	"<div class=\"employee-info\">" +
-	"<h3 class=\"capitalize\">{{ name.first }} {{ name.last }}<h3>" +
-	"<p>{{ email }}</p>" +
-	"<p class=\"capitalize\">{{ location.city }}</p>" +
-	"</div>" +
-  "</div>";
+		function addEmployee(employee, i){
+			$employees.append(Mustache.render(employeeTemplate, employee));
+			$employees.find('.employee').last().attr("id", "" + i + "")}
 
-	function addEmployee(employee){
-		$employees.append(Mustache.render(employeeTemplate, employee));}
+		function showEmployee(index){
+			console.log(index);
+		}
 
-	$.ajax({
-	  url: 'https://randomuser.me/api/?results=12&nat=us',
-	  dataType: 'json',
-	  success: function(employees) {
-	    $.each(employees.results, function(i, employee){
-				console.log(employee);
-				addEmployee(employee);
-			});
-	  }
-});
-});
+			$.ajax({
+			  url: 'https://randomuser.me/api/?results=12&nat=us',
+			  dataType: 'json'}).done(function(employees){
+					$.each(employees.results, function(i, employee){
+						addEmployee(employee, i);
+			  	});//each
+					friends = employees.results;
+				});//then
+
+		$employees.on("click", ".employee", function(){
+			let employeeIndex = $(this).attr("id");
+			showEmployee(employeeIndex);
+		});
+	})(); //anon function
+}); //dom on load
